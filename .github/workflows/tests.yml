@@ -1,0 +1,21 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Run isolated regression tests
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python3 -m unittest discover -s tests -v
