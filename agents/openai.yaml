@@ -1,0 +1,4 @@
+interface:
+  display_name: "CrossOver Trial Refresh"
+  short_description: "Refresh one trial preference while preserving bottles"
+  default_prompt: "Use $crossover-trial-refresh to check and refresh my CrossOver trial when due."
